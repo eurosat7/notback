@@ -3,7 +3,6 @@ declare(strict_types = 1);
 
 namespace NotBack;
 
-use NotBack\Components\Component;
 use NotBack\CssAttributes\CssAttribute;
 use NotBack\Elements\Element;
 use NotBack\Elements\Page;
@@ -26,10 +25,6 @@ class NotBack {
 
     public function applyInstance (Applyable $class):void {
         $class->applyTo($this);
-    }
-
-    public function newComponent (string $class):Component {
-        return new $class($this);
     }
 
     public function newElement (string $class):Element {
@@ -60,7 +55,7 @@ class NotBack {
         $content = implode("\n", $this->styles);
         $md5 = md5($content);
         $cssfilename = "assets/page." . $md5 . ".css";
-        file_put_contents("public/.$cssfilename", $content);
+        file_put_contents("public/" . $cssfilename, $content);
 
         return $cssfilename;
     }

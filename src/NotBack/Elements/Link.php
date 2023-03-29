@@ -9,7 +9,7 @@ class Link extends Element {
     public function toString ():string {
         return (implode("", [
             '<link rel="stylesheet" href="' .
-            $this->esc('. $this->href .'),
+            $this->esc($this->href),
             '">',
         ]));
     }

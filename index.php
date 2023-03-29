@@ -17,16 +17,16 @@ $page = $notback->newElement(Elements\Page::class);
 $page->addCssAttribute(new Background($preset->mainColor));
 $page->title = 'home';
 
-$carussell = $notback->newComponent(Components\Carussell::class);
+$carussell = $notback->newElement(Components\Carussell::class);
 $carussell->addCssAttribute($preset->padding);
 $carussell->addCssAttribute($preset->strongBorder);
 
 $page->add($carussell);
 
-$bigcard = $notback->newComponent(Components\Card::class);
+$bigcard = $notback->newElement(Components\Card::class);
 $bigcard->addCssAttribute(new FontSize(40));
 
-$smallcard = $notback->newComponent(Components\Card::class);
+$smallcard = $notback->newElement(Components\Card::class);
 $smallcard->addCssAttribute(new FontSize(20));
 
 $articles = []; // mysql result set
