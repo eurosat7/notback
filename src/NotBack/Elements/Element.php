@@ -6,6 +6,9 @@ namespace NotBack\Elements;
 use NotBack\CssAttributes\CssAttribute;
 use NotBack\NotBack;
 
+/**
+ * @psalm-consistent-constructor
+ */
 class Element {
 
     /** @var Element[] $children */
@@ -19,7 +22,7 @@ class Element {
 
     public function __construct (
         protected readonly NotBack $notBack,
-        protected readonly string $tag = "div"
+        protected string $tag = "div"
     ) {
     }
 
@@ -44,7 +47,7 @@ class Element {
         if ($this->content !== null) {
             $out[] = $this->content;
         }
-        $out[] = $this->EndTag();
+        $out[] = $this->endTag();
 
         return implode("\n", $out);
     }

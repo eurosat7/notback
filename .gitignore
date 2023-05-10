@@ -1,3 +1,4 @@
-composer.phar
+*.phar
 /vendor/
 .idea
+phpcpd.phar

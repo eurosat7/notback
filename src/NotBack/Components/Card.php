@@ -10,9 +10,7 @@ class Card extends Row {
         NotBack $notBack,
         public string $title = "",
         public string $teaser = "",
-        /**
-         * @var array<string|int>
-         */
+        /** @var array<string|int> */
         public array $route = [],
         public string $image = "",
         string $content = "" // todo should be a <div>
