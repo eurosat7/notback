@@ -7,7 +7,7 @@ use NotBack\Colors\Color;
 use NotBack\Colors\RGBA;
 
 class Background extends CssAttribute {
-    public const STYLE_SOLID = "solid";
+    final public const STYLE_SOLID = "solid";
 
     public function __construct (
         public Color $color = new RGBA(0, 0, 0, 0),

@@ -7,8 +7,8 @@ use NotBack\NotBack;
 
 class Page extends Element {
 
-    private Head $head;
-    private Body $body;
+    private readonly Head $head;
+    private readonly Body $body;
 
     public function __construct (
         NotBack $notBack,

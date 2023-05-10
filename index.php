@@ -1,10 +1,16 @@
 <?php
 include("vendor/autoload.php");
 
-use App\{Entity\Article};
+use App\Entity\Article;
 use App\Presets\MyCustomPreset;
 use App\Themes\MyCustomTheme;
-use NotBack\{Components, CssAttributes\Background, CssAttributes\FontSize, Elements, NotBack, Presets\MobileFirst, Presets\Reset};
+use NotBack\Components;
+use NotBack\CssAttributes\Background;
+use NotBack\CssAttributes\FontSize;
+use NotBack\Elements;
+use NotBack\NotBack;
+use NotBack\Presets\MobileFirst;
+use NotBack\Presets\Reset;
 
 $notback = new NotBack();
 $notback->apply(Reset::class);

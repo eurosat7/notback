@@ -7,7 +7,7 @@ use NotBack\Colors\Color;
 use NotBack\Colors\RGBA;
 
 class Border extends CssAttribute {
-    public const STYLE_SOLID = "solid";
+    final public const STYLE_SOLID = "solid";
 
     public function __construct (
         public int $width,
