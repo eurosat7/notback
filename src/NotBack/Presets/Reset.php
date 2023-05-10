@@ -8,6 +8,9 @@ use NotBack\NotBack;
 
 class Reset implements Applyable {
     public function applyTo (NotBack $notback):void {
-        $notback->addStyle(file_get_contents(__DIR__ . "/reset.css"));
+        $css = file_get_contents(__DIR__ . "/reset.css");
+        if ($css !== false) {
+            $notback->addStyle($css);
+        }
     }
 }

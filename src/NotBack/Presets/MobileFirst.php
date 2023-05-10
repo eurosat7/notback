@@ -8,6 +8,9 @@ use NotBack\NotBack;
 
 class MobileFirst implements Applyable {
     public function applyTo (NotBack $notback):void {
-        $notback->addStyle(file_get_contents(__DIR__ . "/mobilefirst.css"));
+        $css = file_get_contents(__DIR__ . "/mobilefirst.css");
+        if ($css !== false) {
+            $notback->addStyle($css);
+        }
     }
 }

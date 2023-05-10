@@ -8,6 +8,9 @@ use NotBack\NotBack;
 
 class Minimal implements Applyable {
     public function applyTo (NotBack $notback):void {
-        $notback->addStyle(file_get_contents(__DIR__ . "/minimal.css"));
+        $css = file_get_contents(__DIR__ . "/minimal.css");
+        if ($css !== false) {
+            $notback->addStyle($css);
+        }
     }
 }

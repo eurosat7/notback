@@ -13,6 +13,7 @@ class Element {
 
     /** @var CssAttribute[] $styleAttributes */
     protected array $styleAttributes = [];
+    /** @var array<string> */
     public array $classnames = [];
     public ?string $content = null;
 

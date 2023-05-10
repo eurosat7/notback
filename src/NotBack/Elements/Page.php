@@ -15,13 +15,18 @@ class Page extends Element {
         public string $title = ""
     ) {
         parent::__construct($notBack, "page");
-        $this->head = $notBack->newElement(Head::class);
-        $this->body = $notBack->newElement(Body::class);
+        /** @var Head $head */
+        $head = $notBack->newElement(Head::class);
+        $this->head = $head;
+        /** @var Body $body */
+        $body = $notBack->newElement(Body::class);
+        $this->body = $body;
         $this->children[] = $this->head;
         $this->children[] = $this->body;
     }
 
     public function addCssFile (string $cssfilename):void {
+        /** @var Link $link */
         $link = $this->notBack->newElement(Link::class);
         $link->href = $cssfilename;
         $this->head->add($link);

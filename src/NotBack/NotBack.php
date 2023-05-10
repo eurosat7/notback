@@ -9,6 +9,7 @@ use NotBack\Elements\Page;
 use NotBack\Interfaces\Applyable;
 
 class NotBack {
+    /** @var array<string> */
     private array $styles = [];
 
     public function toString (Page $page):string {
@@ -18,6 +19,9 @@ class NotBack {
         return $page->toString();
     }
 
+    /**
+     * @param class-string<Applyable> $class
+     */
     public function apply (string $class):void {
         $instance = new $class();
         $this->applyInstance($instance);
@@ -27,6 +31,9 @@ class NotBack {
         $class->applyTo($this);
     }
 
+    /**
+     * @param class-string<Element> $class
+     */
     public function newElement (string $class):Element {
         return new $class($this);
     }
